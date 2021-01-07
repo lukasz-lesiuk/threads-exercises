@@ -4,7 +4,7 @@
 * Create 5 threads by passing runnable object to Thread class constructor.
 * Start threads by calling start() method on every thread object and run main() method.
 
-* Write own class that will extend the Thread class, override and implement run() method with the same functionality as above.
+* Write own class which will extend the Thread class, override and implement run() method with the same functionality as above.
 * Create an object of your class and start a thread.
 
 
@@ -17,3 +17,10 @@
 
 ## Exercise 3 (Using join() method):
 * Use join() method in such way that println() method to be run after calculating fibonnaci series (check FibonacciGeneratorThread class)
+
+## Exercise 4 (Using synchronized keyword):
+* First, run the main method without any changes and check what is going on.
+* Try to fix it. 
+
+## HOMEWORK - Exercise 5 (Producer and Consumer pattern)
+* Try to implement Producer Consumer pattern with given template
