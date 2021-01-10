@@ -2,18 +2,25 @@ package com.codecool.threads.exercise4;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Counter counter = new Counter();
+    public static void main(String[] args) throws InterruptedException {
 
-        int limit = 200_000;
+        for(int i =0; i<10; i++) {
 
-        Incrementer incrementer1 = new Incrementer(counter, limit);
-        Incrementer incrementer2 = new Incrementer(counter, limit);
+            Counter counter = new Counter();
 
-        incrementer1.start();
-        incrementer2.start();
+            int limit = 200_000;
 
-        System.out.printf("Expected: %s | Current: %s%n", limit * 2, counter.getCount());
+            Incrementer incrementer1 = new Incrementer(counter, limit);
+            Incrementer incrementer2 = new Incrementer(counter, limit);
+
+            incrementer1.start();
+            incrementer2.start();
+
+            incrementer1.join();
+            incrementer2.join();
+
+            System.out.printf("Expected: %s | Current: %s%n", limit * 2, counter.getCount());
+        }
     }
 
 }
