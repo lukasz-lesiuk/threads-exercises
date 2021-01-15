@@ -1,4 +1,4 @@
-package com.codecool.threads.exercise3;
+package com.codecool.threads.basics.exercise3;
 
 public class Main {
 

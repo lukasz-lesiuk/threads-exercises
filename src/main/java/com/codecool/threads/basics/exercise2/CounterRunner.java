@@ -1,4 +1,4 @@
-package com.codecool.threads.exercise2;
+package com.codecool.threads.basics.exercise2;
 
 public class CounterRunner implements Runnable {
     private int counter = 1;
