@@ -4,7 +4,7 @@ import java.util.concurrent.Exchanger;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         BlockingQueue blockingQueue = new BlockingQueue();
         Exchanger<BlockingQueue> exchanger = new Exchanger<>();
 
@@ -16,5 +16,8 @@ public class Main {
 
         producerThread.start();
         consumerThread.start();
+
+        producerThread.join();
+        consumerThread.join();
     }
 }

@@ -6,6 +6,7 @@ public class Consumer implements Runnable {
 
     private BlockingQueue blockingQueue;
     private final Exchanger<BlockingQueue> exchanger;
+    private int PACKETS_LIMIT = 10;
 
     public Consumer(Exchanger<BlockingQueue> exchanger, BlockingQueue blockingQueue) {
         this.blockingQueue = blockingQueue;
@@ -14,13 +15,17 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        if (blockingQueue.nonEmpty()) {
-            try {
-                String packet = blockingQueue.take();
-                blockingQueue = exchanger.exchange(blockingQueue);
-                System.out.println(Thread.currentThread().getName() + " consumes: " + packet);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        while (PACKETS_LIMIT > 0) {
+            if (blockingQueue.nonEmpty()) {
+                try {
+                    String packet = blockingQueue.take();
+                    blockingQueue = exchanger.exchange(blockingQueue);
+                    System.out.println(Thread.currentThread().getName() + " consumes: " + packet);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                PACKETS_LIMIT--;
             }
         }
     }

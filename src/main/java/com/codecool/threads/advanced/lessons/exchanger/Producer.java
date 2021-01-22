@@ -1,5 +1,7 @@
 package com.codecool.threads.advanced.lessons.exchanger;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.Exchanger;
 
 public class Producer implements Runnable {
@@ -14,13 +16,26 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
-        try {
-            String packet = "First packet";
-            blockingQueue.put(packet);
-            blockingQueue = exchanger.exchange(blockingQueue);
-            System.out.println(Thread.currentThread().getName() + " fills: " + packet);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        List<String> packets = Arrays.asList(
+                "Packet 1",
+                "Packet 2",
+                "Packet 3",
+                "Packet 4",
+                "Packet 5",
+                "Packet 6",
+                "Packet 7",
+                "Packet 8",
+                "Packet 9",
+                "Packet 10");
+
+        for (String packet : packets) {
+            try {
+                blockingQueue.put(packet);
+                blockingQueue = exchanger.exchange(blockingQueue);
+                System.out.println(Thread.currentThread().getName() + " putting: " + packet);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
