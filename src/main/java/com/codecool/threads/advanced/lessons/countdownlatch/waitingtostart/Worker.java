@@ -1,4 +1,4 @@
-package com.codecool.threads.advanced.countdownlatch.waitingtostart;
+package com.codecool.threads.advanced.lessons.countdownlatch.waitingtostart;
 
 import java.util.concurrent.CountDownLatch;
 

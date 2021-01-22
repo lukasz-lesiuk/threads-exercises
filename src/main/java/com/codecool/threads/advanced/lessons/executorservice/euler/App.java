@@ -1,4 +1,4 @@
-package com.codecool.threads.advanced.executorservice.euler;
+package com.codecool.threads.advanced.lessons.executorservice.euler;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

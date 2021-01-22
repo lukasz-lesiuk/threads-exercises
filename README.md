@@ -24,3 +24,15 @@
 
 ## HOMEWORK - Exercise 5 (Producer and Consumer pattern)
 * Try to implement Producer Consumer pattern with given template
+
+Concurrent utilities
+-----------------------------------------------------------------------
+## Exercise 6 (Working with Future):
+* Implement Callable interface which will calculate nth fibonacci number for a larger number e.g. (45)
+* Create executor service using Executors util class 
+* Pass the callable to executorService using proper method which returns Future
+* Using while loop wait until future will be done
+* When future will be ready get the value
+* Print it
+* Shutdown executor service
+

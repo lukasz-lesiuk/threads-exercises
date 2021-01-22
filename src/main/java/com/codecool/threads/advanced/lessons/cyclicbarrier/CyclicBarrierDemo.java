@@ -1,4 +1,4 @@
-package com.codecool.threads.advanced.cyclicbarrier;
+package com.codecool.threads.advanced.lessons.cyclicbarrier;
 
 import java.util.ArrayList;
 import java.util.Collections;

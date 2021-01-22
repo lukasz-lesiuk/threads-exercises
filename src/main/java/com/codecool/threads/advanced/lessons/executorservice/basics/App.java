@@ -1,4 +1,4 @@
-package com.codecool.threads.advanced.executorservice.basics;
+package com.codecool.threads.advanced.lessons.executorservice.basics;
 
 import java.util.ArrayList;
 import java.util.List;
