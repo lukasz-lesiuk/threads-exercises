@@ -2,6 +2,8 @@ package com.codecool.threads.advanced.lessons.exchanger;
 
 import java.util.concurrent.Exchanger;
 
+import static java.lang.Thread.sleep;
+
 public class Consumer implements Runnable {
 
     private BlockingQueue blockingQueue;
@@ -19,8 +21,8 @@ public class Consumer implements Runnable {
             if (blockingQueue.nonEmpty()) {
                 try {
                     String packet = blockingQueue.take();
-                    blockingQueue = exchanger.exchange(blockingQueue);
                     System.out.println(Thread.currentThread().getName() + " consumes: " + packet);
+                    blockingQueue = exchanger.exchange(blockingQueue);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

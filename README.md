@@ -50,4 +50,6 @@ App class:
 * Make the main thread to await on CountDownLatch for all threads to stop waiting.
 
 ## Exercise 8:
-
+* Make one thread adding M to name
+* Make another thread A to name
+* Try to write MAMA using Exchanger class

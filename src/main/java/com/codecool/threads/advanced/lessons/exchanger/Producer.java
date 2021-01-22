@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Exchanger;
 
+import static java.lang.Thread.sleep;
+
 public class Producer implements Runnable {
 
     private BlockingQueue blockingQueue;
@@ -30,9 +32,10 @@ public class Producer implements Runnable {
 
         for (String packet : packets) {
             try {
-                blockingQueue.put(packet);
-                blockingQueue = exchanger.exchange(blockingQueue);
                 System.out.println(Thread.currentThread().getName() + " putting: " + packet);
+                blockingQueue.put(packet);
+                sleep(1000);
+                blockingQueue = exchanger.exchange(blockingQueue);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
