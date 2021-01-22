@@ -7,14 +7,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Semaphore semaphore = new Semaphore(2);
 
-        MyThread myThread1 = new MyThread(semaphore, "A");
-        MyThread myThread2 = new MyThread(semaphore, "B");
+        Incrementer incrementer = new Incrementer(semaphore);
+        Decrementer decrementer = new Decrementer(semaphore);
 
-        myThread1.start();
-        myThread2.start();
+        incrementer.start();
+        decrementer.start();
 
-        myThread1.join();
-        myThread1.join();
+        incrementer.join();
+        decrementer.join();
 
         System.out.println("count: " + Shared.count);
     }
