@@ -9,7 +9,6 @@ import java.util.concurrent.Executors;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-
         CountDownLatch countDownLatch = new CountDownLatch(3);
 
         List<Runnable> checkers = Arrays.asList(

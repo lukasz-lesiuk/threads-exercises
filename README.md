@@ -36,3 +36,18 @@ Concurrent utilities
 * Print it
 * Shutdown executor service
 
+## Exercise 7 (Countdown latch):
+Counter class:
+* Implement a thread Counter which will take a CountDownLatch and int maxValue as parameters in the constructor. 
+* Implement method run which will increment count value every one second up to maxValue
+* If counting will be over, call countDown() method on the countDownLatch.
+
+App class:
+* Create CountDownLatch object with value 3 (new CountDownLatch(3))
+* Create 3 threads of type Counter in main method.
+* Pass the CountDownLatch object to every thread object and different maxValues to each thread e.g. 30, 10, 50
+* Start the 3 threads, manually or using ExecutorService (choose one you wish)
+* Make the main thread to await on CountDownLatch for all threads to stop waiting.
+
+## Exercise 8:
+
