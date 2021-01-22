@@ -2,8 +2,6 @@ package com.codecool.threads.advanced.lessons.exchanger;
 
 import java.util.concurrent.Exchanger;
 
-import static java.lang.Thread.sleep;
-
 public class Consumer implements Runnable {
 
     private BlockingQueue blockingQueue;

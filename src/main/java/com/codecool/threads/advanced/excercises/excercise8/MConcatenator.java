@@ -16,7 +16,7 @@ public class MConcatenator extends Thread {
         for (int i = 0; i < 2; i++) {
             try {
                 word.concat("M");
-                word = exchanger.exchange(word);
+                exchanger.exchange(word);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

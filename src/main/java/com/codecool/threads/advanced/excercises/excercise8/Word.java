@@ -15,4 +15,8 @@ public class Word {
     public String getName() {
         return name;
     }
+
+    public boolean startsFromM() {
+        return name.startsWith("M");
+    }
 }

@@ -14,11 +14,13 @@ public class AConcatenator extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 2; i++) {
-            try {
-                word = exchanger.exchange(word);
-                word.concat("A");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (word.startsFromM()) {
+                try {
+                    word.concat("A");
+                    exchanger.exchange(word);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
