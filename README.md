@@ -24,3 +24,33 @@
 
 ## HOMEWORK - Exercise 5 (Producer and Consumer pattern)
 * Try to implement Producer Consumer pattern with given template
+
+Concurrent utilities
+-----------------------------------------------------------------------
+## Exercise 6 (Working with Future):
+* Implement Callable interface which will calculate nth fibonacci number for a larger number e.g. (45)
+* Create executor service using Executors util class 
+* Pass the callable to executorService using proper method which returns Future
+* Using while loop wait until future will be done
+* When future will be ready get the value
+* Print it
+* Shutdown executor service
+
+## Exercise 7 (Countdown latch):
+Counter class:
+* Implement a thread Counter which will take a CountDownLatch and int maxValue as parameters in the constructor. 
+* Implement method run which will increment count value every one second up to maxValue
+* If counting will be over, call countDown() method on the countDownLatch.
+
+App class:
+* Create CountDownLatch object with value 3 (new CountDownLatch(3))
+* Create 3 threads of type Counter in main method.
+* Pass the CountDownLatch object to every thread object and different maxValues to each thread e.g. 30, 10, 50
+* Start the 3 threads, manually or using ExecutorService (choose one you wish)
+* Make the main thread to await on CountDownLatch for all threads to stop waiting.
+
+## Exercise 8:
+* Create class ThreadA
+* Create class ThreadB
+* Using Exchanger, exchange from ThreadA string "from A" and print it
+* Using Exchanger, exchange from ThreadA string "from B" and print it

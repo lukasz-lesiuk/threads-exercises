@@ -1,4 +1,4 @@
-package com.codecool.threads.exercise5;
+package com.codecool.threads.basics.exercise5;
 
 public class Consumer implements Runnable {
 

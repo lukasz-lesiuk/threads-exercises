@@ -1,4 +1,4 @@
-package com.codecool.threads.exercise2;
+package com.codecool.threads.basics.exercise2;
 
 import com.codecool.threads.exercise1.CounterThread;
 

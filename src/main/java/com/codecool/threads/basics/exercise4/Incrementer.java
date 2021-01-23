@@ -1,4 +1,4 @@
-package com.codecool.threads.exercise4;
+package com.codecool.threads.basics.exercise4;
 
 public class Incrementer extends Thread {
 
